@@ -9,7 +9,7 @@ function resolve (dir) {
 }
 
 const createLintingRule = () => ({
-  test: /\.(js|vue)$/,
+  test: /\.(jsx?|vue)$/,
   loader: 'eslint-loader',
   enforce: 'pre',
   include: [resolve('src'), resolve('test')],
@@ -22,7 +22,7 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    app: './src/index.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -32,9 +32,9 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.jsx', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      // 'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
     }
   },
@@ -47,7 +47,7 @@ module.exports = {
         options: vueLoaderConfig
       },
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
       },

@@ -10,16 +10,21 @@ module.exports = {
     browser: true,
   },
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-  extends: 'standard',
+  extends: [
+    'standard',
+    'plugin:react/recommended',
+  ],
   // required to lint *.vue files
   plugins: [
-    'html'
+    'react'
   ],
   // add your custom rules here
   rules: {
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'space-before-function-paren': 'off',
+    'react/prop-types': 'off'
   }
 }
