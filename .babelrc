@@ -9,5 +9,5 @@
     "react",
     "stage-2"
   ],
-  "plugins": ["transform-runtime", "syntax-dynamic-import"]
+  "plugins": ["transform-runtime", "syntax-dynamic-import", "react-hot-loader/babel"]
 }
