@@ -17,11 +17,8 @@ render(App)
 
 // Webpack Hot Module Replacement API
 if (module.hot) {
+  // './layouts/CoreLayout.js',会导致HMR失效，原因未知
   module.hot.accept('./layouts/CoreLayout', () => {
     render(App)
   })
-
-  // const App = import('./layouts/CoreLayout.js')
-  // const App = require('./layouts/CoreLayout.js').default
-  // render(App)
 }
