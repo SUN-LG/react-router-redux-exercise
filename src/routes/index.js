@@ -1,9 +1,9 @@
-import Counter from './Counter'
+import AsyncCounter from './Counter'
 import Home from './Home'
-import Elapse from './Elapse'
+import AsyncElapse from './Elapse'
 
 export {
-  Counter,
+  AsyncCounter,
   Home,
-  Elapse
+  AsyncElapse
 }

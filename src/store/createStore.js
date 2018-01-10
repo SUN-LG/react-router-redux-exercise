@@ -1,12 +1,22 @@
 import {applyMiddleware, compose, createStore} from 'redux'
+import createBrowserHistory from 'history/createBrowserHistory'
 import thunk from 'redux-thunk'
-import reducers from './reducers/index'
+import reducers, {reducersList} from './reducers/index'
+import {updateLocation} from './location'
 
+const browserHistory = createBrowserHistory()
 // export default (initialState = {}) => {
 // 取消下面initalState的注释
 // const initialState = {}
+
+/**
+ * 中间件
+ */
 const middlewares = [thunk]
 
+/**
+ * 增强器
+ */
 const enhancers = []
 
 const store = createStore(
@@ -17,6 +27,9 @@ const store = createStore(
     ...enhancers
   )
 )
+
+store.reducersList = reducersList
+store.unsubscribeHistory = browserHistory.listen(updateLocation(store))
 
 if (module.hot) {
   module.hot.accept('./reducers/index', () => {

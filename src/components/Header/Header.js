@@ -5,7 +5,7 @@ import './Header.css'
 export const Header = () => (
   <div>
     <h1>React starter kit</h1>
-    <NavLink to="/" activeClassName="route--active">Home</NavLink>
+    <NavLink exact to="/" activeClassName="route--active">Home</NavLink>
     {' . '}
     <NavLink to="/counter" activeClassName="route--active">Counter</NavLink>
     {' . '}

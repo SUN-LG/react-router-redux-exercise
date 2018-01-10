@@ -1,8 +1,12 @@
-import Counter from './containers/CounterContainer'
+
+import asyncComponent from '../../utils/HOC'
 import counter from './modules/counter'
 
 export {
   counter
 }
 
-export default Counter
+export default asyncComponent(
+  () => import('./containers/CounterContainer'),
+  { counter: () => import('./modules/counter') }
+)

@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import {Provider} from 'react-redux'
 import store from '../store/createStore'
 import Header from '../components/Header'
-import {Home, Counter, Elapse} from '../routes'
+import {Home, AsyncCounter, AsyncElapse} from '../routes'
 import '../assets/style/core.css'
 
 // const store = createStore()
@@ -14,8 +14,8 @@ const CoreLayout = () => (
 
     <Switch>
       <Route exact path="/" component={Home}></Route>
-      <Route path="/counter" component={Counter}></Route>
-      <Route path="/elapse" component={Elapse}></Route>
+      <Route exact path="/counter" component={AsyncCounter}></Route>
+      <Route exact path="/elapse" component={AsyncElapse}></Route>
     </Switch>
   </div>
 )
