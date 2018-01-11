@@ -16,6 +16,8 @@ export default function AsyncComponent(importComponent, reducer) {
         return reducer[key]().then(m => {
           injectAsyncReducer(key, m.default)
         })
+      } else {
+        return Promise.resolve()
       }
     }
 
