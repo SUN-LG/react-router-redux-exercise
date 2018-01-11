@@ -28,6 +28,8 @@ const store = createStore(
   )
 )
 
+console.log(browserHistory)
+
 store.reducersList = reducersList
 store.unsubscribeHistory = browserHistory.listen(updateLocation(store))
 
