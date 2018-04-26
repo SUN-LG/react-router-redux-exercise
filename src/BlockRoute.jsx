@@ -38,7 +38,6 @@ const BlockRoute = () => (
       <h6>subRoute</h6>
       <Link to="/">back</Link>
       
-    {console.log(props)}
   </div>
 )
 
